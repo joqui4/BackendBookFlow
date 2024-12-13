@@ -10,4 +10,4 @@ RUN mvn clean package -DskipTests  # Compila el proyecto
 FROM openjdk:21-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/services-0.0.1-SNAPSHOT.jar /app/services-0.0.1-SNAPSHOT.jar
-CMD ["java", "-jar", "services-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "--enable-preview", "-jar", "services-0.0.1-SNAPSHOT.jar"]
