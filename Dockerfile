@@ -9,5 +9,8 @@ RUN mvn clean package -DskipTests  # Compila el proyecto
 # Etapa 2: Crear la imagen final
 FROM openjdk:21-jdk-slim
 WORKDIR /app
+
+EXPOSE 8080
+
 COPY --from=build /app/target/services-0.0.1-SNAPSHOT.jar /app/services-0.0.1-SNAPSHOT.jar
 CMD ["java", "--enable-preview", "-jar", "services-0.0.1-SNAPSHOT.jar"]
