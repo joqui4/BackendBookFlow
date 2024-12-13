@@ -43,7 +43,7 @@ public class PopulateBookCommand {
         return bookTitle;
     }
     public Long getBookGenreId() {
-        return bookGenreId.getGenreId();
+        return bookGenreId.getId();
     }
     public String getBookImage() {
         return bookImage;

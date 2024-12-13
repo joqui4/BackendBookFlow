@@ -6,14 +6,16 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 
 public class Book  {
     @Id
-    @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookId;
 
@@ -21,7 +23,8 @@ public class Book  {
     private String bookTitle;
 
     @ManyToOne // Relación muchos a uno de Book a Genre eso quiere decir que un libro pertenece a un género
-    @JoinColumn(name = "genre_id")
+    @JoinColumn(name = "genre_id", nullable = false)
+
     private Genre bookGenreId;
 
     @Getter
@@ -100,29 +103,5 @@ public class Book  {
     }
     public String getBookName(){
         return bookTitle;
-    }
-
-    public Long getBookId() {
-        return bookId;
-    }
-
-    public String getBookDescription() {
-        return bookDescription;
-    }
-
-    public String getBookAuthor() {
-        return bookAuthor;
-    }
-
-    public String getBookAuthorImage() {
-        return bookAuthorImage;
-    }
-
-    public String getBookPublisher() {
-        return bookPublisher;
-    }
-
-    public String getBookRank() {
-        return bookRank;
     }
 }

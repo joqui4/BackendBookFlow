@@ -13,12 +13,7 @@ import java.util.List;
 @Service
 public class CommentExistsEventHandler {
 
-    private static final List<PopulateCommentCommand> INITIAL_COMMENT = List.of(
-            new PopulateCommentCommand(1L, "I loved this book!"),
-            new PopulateCommentCommand(2L, "I hated this book!"),
-            new PopulateCommentCommand(3L, "I thought this book was just okay."),
-            new PopulateCommentCommand(4L, "I couldn't put this book down!")
-    );
+    private static final List<PopulateCommentCommand> INITIAL_COMMENT = List.of();
 
     @Autowired
     private CommentRepository commentRepository;

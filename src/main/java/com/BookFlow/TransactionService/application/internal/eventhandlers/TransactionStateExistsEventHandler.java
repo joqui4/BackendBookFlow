@@ -12,12 +12,7 @@ import java.util.List;
 
 @Service
 public class TransactionStateExistsEventHandler {
-    private static final List<PopulateTransactionState> INITIAL_TRANSACTION_STATES = List.of(
-            new PopulateTransactionState(1L, "Pending"),
-            new PopulateTransactionState(2L, "Processing"),
-            new PopulateTransactionState(3L, "Completed"),
-            new PopulateTransactionState(4L, "Cancelled")
-    );
+    private static final List<PopulateTransactionState> INITIAL_TRANSACTION_STATES = List.of();
 
     @Autowired
     private TransactionStateRepository transactionStateRepository;

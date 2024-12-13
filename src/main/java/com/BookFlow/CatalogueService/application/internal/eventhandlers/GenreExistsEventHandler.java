@@ -13,21 +13,7 @@ import java.util.List;
 @Service
 public class GenreExistsEventHandler {
 
-    private static final List<PopulateGenreCommand>INITIAL_GENRE = List.of(
-            new PopulateGenreCommand(1L, "Legal Thriller"),
-            new PopulateGenreCommand(2L, "Historical Fiction"),
-            new PopulateGenreCommand(3L, "Fantasy"),
-            new PopulateGenreCommand(4L, "Mystery"),
-            new PopulateGenreCommand(5L, "Fantasy"),
-            new PopulateGenreCommand(6L, "Romance"),
-            new PopulateGenreCommand(7L, "Fiction"),
-            new PopulateGenreCommand(8L, "Nonfiction"),
-            new PopulateGenreCommand(9L, "Biography"),
-            new PopulateGenreCommand(10L, "History"),
-            new PopulateGenreCommand(11L, "Psychology"),
-            new PopulateGenreCommand(12L, "Health"),
-            new PopulateGenreCommand(13L, "True Crime")
-    );
+    private static final List<PopulateGenreCommand>INITIAL_GENRE = List.of();
 
     @Autowired
     private GenreRepository genreRepository;

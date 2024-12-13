@@ -3,36 +3,27 @@ package com.BookFlow.CatalogueService.domain.model.aggregates;
 import com.BookFlow.CatalogueService.domain.model.commands.CreateGenreCommand;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
-@Entity
 @Getter
+@Entity
 public class Genre  {
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long genreId;
+    private Long id;
 
     @NotBlank(message = "Genre name is mandatory")
     @Column
     private String name;
 
-    public Genre(Long genreId,String name) {
-        this.genreId = genreId;
+    public Genre(Long id, String name) {
+        this.id = id;
         this.name = name;
     }
     public Genre(CreateGenreCommand command) {
         this.name = command.name();
     }
     public Genre() {
-    }
-
-    public Long getGenreId(){
-        return genreId;
-    }
-    public String getName(){
-        return name;
     }
 
 }
