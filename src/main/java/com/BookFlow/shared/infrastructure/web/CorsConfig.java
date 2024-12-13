@@ -14,7 +14,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOriginPatterns("*")
+                        .allowedOrigins("https://backendbookflow-production.up.railway.app", "http://localhost:8080")
                         .allowedHeaders("*")
                         .allowedMethods("*")
                         .allowCredentials(true);
