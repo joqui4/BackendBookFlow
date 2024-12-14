@@ -13,7 +13,12 @@ import java.util.List;
 @Service
 public class PaymentMethodExistsEventHandler {
 
-    private static final List<PopulatePaymentMethod>INITIAL_PAYMENT_METHODS = List.of();
+    private static final List<PopulatePaymentMethod>INITIAL_PAYMENT_METHODS = List.of(
+            new PopulatePaymentMethod(1L, "Credit Card"),
+            new PopulatePaymentMethod(2L, "Debit Card"),
+            new PopulatePaymentMethod(3L, "Net Banking"),
+            new PopulatePaymentMethod(4L, "PayPal")
+    );
 
     @Autowired
     private PaymentMethodRepository paymentMethodRepository;
